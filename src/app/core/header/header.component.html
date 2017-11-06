@@ -1,0 +1,29 @@
+<!-- <header class="header">
+  <div class="container">
+    <a [routerLink]="['/']" class="logo-link">
+      <img class="img-logo" [src]="'/assets/images/odata.png'" alt="DAR Bazar">
+    </a>
+    <div class="header__icon">
+      <a class="header__icon-link" [routerLink]="['/profile']">
+        <img [src]="'/assets/images/profile-icon.svg'">
+      </a>
+    </div>
+    <div class="header__profile">
+      <a [routerLink]="['/profile']">My Profile</a>
+    </div>
+  </div>
+</header> -->
+
+<header>
+<nav>
+    <button mat-button [routerLink]="['/']">
+      <mat-icon> home </mat-icon>
+      <span> Home </span>
+    </button>
+    <button mat-button [routerLink]="['/profile']">
+      <mat-icon> account_circle</mat-icon>
+      <span> Profile </span>
+    </button>
+    <mat-checkbox [formControl]="checked">Login</mat-checkbox>
+  </nav>
+</header>
