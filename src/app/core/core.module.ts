@@ -4,7 +4,13 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { MatPaginatorModule, MatTableModule, MatIconModule, MatSelectModule, MatInputModule, MatListModule, MatSliderModule, MatSlideToggleModule, MatButtonModule, MatButtonToggleModule, MatToolbarModule, MatAutocompleteModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule, MatStepperModule, MatExpansionModule, MatGridListModule, MatMenuModule, MatNativeDateModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule, MatSidenavModule, MatSnackBarModule, MatSortModule, MatTabsModule, MatTooltipModule } from '@angular/material';
+import { MatPaginatorModule, MatTableModule, MatIconModule, MatSelectModule, MatInputModule, 
+        MatListModule, MatSliderModule, MatSlideToggleModule, MatButtonModule, MatButtonToggleModule,
+        MatToolbarModule, MatAutocompleteModule, MatCardModule, MatCheckboxModule, MatChipsModule, 
+        MatDatepickerModule, MatDialogModule, MatStepperModule, MatExpansionModule, MatGridListModule, 
+        MatMenuModule, MatNativeDateModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, 
+        MatRippleModule, MatSidenavModule, MatSnackBarModule, MatSortModule, 
+        MatTabsModule, MatTooltipModule } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { ReactiveFormsModule } from '@angular/forms';
 

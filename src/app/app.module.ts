@@ -6,9 +6,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { AuthService } from './auth.service';
+
 import { AuthGuard } from './auth.guard';
 import { DeactivateGuard } from './deactivate.guard';
+import { AuthService } from './services/auth.service';
+import { HomeComponent } from './home/home.component';
+import { HomeModule } from './home/home.module';
 
 
 @NgModule({
@@ -20,7 +23,8 @@ import { DeactivateGuard } from './deactivate.guard';
     HttpClientModule,
     CoreModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HomeModule
   ],
   providers: [
     AuthService,

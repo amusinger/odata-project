@@ -18,6 +18,4 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.getProfile();
   }
-  
-
 }

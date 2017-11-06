@@ -5,6 +5,7 @@ import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { HomeModule } from './home/home.module';
 import { AuthGuard } from './auth.guard';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: 'app/home/home.module#HomeModule',
+        //component: HomeComponent
       },
       {
         path: '',

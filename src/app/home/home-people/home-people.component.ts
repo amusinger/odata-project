@@ -20,21 +20,21 @@ export class HomePeopleComponent implements OnInit {
   dataSource: ExampleDataSource | null;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  public values: any[];
-  
-  getPeople(): any {
-    this.peopleService.getAll<any[]>()
-    .subscribe((data: any[]) => this.values = data["value"]);
-  }
+  public values: any[];  
+  // getPeople(): any {
+  //   this.peopleService.getAll<any[]>()
+  //   .subscribe((data: any[]) => this.values = data["value"]);
+  // }
 
   constructor(private peopleService: PeopleService) { }
 
   ngOnInit() {
-    this.dataSource = new ExampleDataSource(this.exampleDatabase, this.paginator);
-    //this.getPeople();
-    
+    setTimeout(() => {
+      this.dataSource = new ExampleDataSource(this.exampleDatabase, this.paginator);
+    }, 1000);
+   
+    // this.getPeople();
   }
-
 }
 export interface UserData {
   UserName: string;

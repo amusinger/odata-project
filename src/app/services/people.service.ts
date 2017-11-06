@@ -9,11 +9,11 @@ export class PeopleService {
 
   constructor(private http: HttpClient) { }
 
-  private actionUrl: string = 'http://services.odata.org/TripPinRESTierService/';
+  private actionUrl = 'http://services.odata.org/TripPinRESTierService/';
   subject: Subject<UserData> = new Subject();
   results = this.subject.asObservable();
   getPeople() {
-    this.http.get(this.actionUrl +'People').subscribe(data => {
+    this.http.get(this.actionUrl + 'People').subscribe(data => {
       for (let i = 0; i < data['value'].length; i ++) {
         this.subject.next(data['value'][i]);
       }
@@ -21,11 +21,11 @@ export class PeopleService {
   }
 
   public getAll<T>(): Observable<T> {
-    return this.http.get<T>(this.actionUrl +'People');
+    return this.http.get<T>(this.actionUrl + 'People');
   }
 
-  public getMe<T>(): Observable<T>{
-    return this.http.get<T>(this.actionUrl + '(S(3mslpb2bc0k5ufk24olpghzx))/Me')
+  public getMe<T>(): Observable<T> {
+    return this.http.get<T>(this.actionUrl + '(S(3mslpb2bc0k5ufk24olpghzx))/Me');
   }
 
   
