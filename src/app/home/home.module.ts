@@ -10,7 +10,8 @@ import { MatPaginatorModule, MatTableModule, MatIconModule, MatSelectModule, Mat
   MatDatepickerModule, MatDialogModule, MatStepperModule, MatExpansionModule, MatGridListModule, 
   MatMenuModule, MatNativeDateModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule,
   MatRippleModule, MatSidenavModule, MatSnackBarModule, MatSortModule, 
-  MatTabsModule, MatTooltipModule } from '@angular/material';
+  MatTabsModule,
+  MatTooltipModule,  } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
