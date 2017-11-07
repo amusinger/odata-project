@@ -14,14 +14,16 @@ export class AuthGuard implements CanActivate {
               private http:HttpClient) {}
   
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-      return new Promise((resolve, reject) => {
-        this.peopleService.getMe().toPromise().then(
-          res => {
-            resolve(res);
-            console.log(res);
-          }
-        );
-      });
+      return this.peopleService.getMe().toPromise()
+      // return new Promise((resolve, reject) => {
+        
+        // .then(
+        //   res => {
+        //     resolve(res);
+        //     console.log(res);
+        //   }
+        // );
+      // });
   }
   canActivate(
     next: ActivatedRouteSnapshot,

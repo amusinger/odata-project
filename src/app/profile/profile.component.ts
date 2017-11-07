@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PeopleService } from '../services/people.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -9,13 +10,18 @@ import { PeopleService } from '../services/people.service';
 export class ProfileComponent implements OnInit {
   public myProfile: any[];
   
-  getProfile(): any {
-    this.peopleService.getMe<any[]>()
-    .subscribe((data: any[]) => this.myProfile = data);
-  }
-  constructor(private peopleService: PeopleService) { }
+  // getProfile(): any {
+  //   this.peopleService.getMe<any[]>()
+  //   .subscribe((data: any[]) => this.myProfile = data);
+  // }
+  
+  constructor(
+    private route: ActivatedRoute,
+    private peopleService: PeopleService) { }
 
   ngOnInit() {
-    this.getProfile();
+    this.route.data.subscribe(data => {
+      this.myProfile = data.testData;
+    })
   }
 }
