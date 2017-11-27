@@ -1,1 +1,12 @@
-<app-home-people></app-home-people>
+<app-home-airports *ngIf="airports" [airports]="airports"></app-home-airports>
+
+<div class="home-row">
+    <div class="home-row_people">
+        <app-home-people></app-home-people>
+    </div>
+    <div class="home-row_stats">
+        <app-home-stats></app-home-stats>
+    </div>
+</div>
+
+

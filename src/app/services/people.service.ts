@@ -25,10 +25,24 @@ export class PeopleService {
   }
 
   public getMe<T>(): Observable<T> {
-    return this.http.get<T>(this.actionUrl + '(S(3mslpb2bc0k5ufk24olpghzx))/Me');
+    return this.http.get<T>(this.actionUrl + '/Me');
   }
 
-  
+  public getMyFriends(): Promise<any>{
+    return this.http.get(this.actionUrl + '/Me/Friends').toPromise();
+  }
+
+  public getMyTrips(): any{
+    this.http.get(this.actionUrl + '/Me/Trips').subscribe(data => {
+      for (let i = 0; i < data['value'].length; i ++) {
+        this.subject.next(data['value'][i]);
+      }
+    });
+  }
+
+  public getPerson<T>(username: String): Observable<T> {
+    return this.http.get<T>(this.actionUrl + 'People(\'' + username + '\')');
+  }
 
 }
 

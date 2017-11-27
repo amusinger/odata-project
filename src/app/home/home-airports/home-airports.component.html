@@ -1,0 +1,23 @@
+<mat-card class="content">
+    <mat-card-title>
+      Best Airports
+    </mat-card-title>
+    <mat-card-content class="bg">
+      <mat-card class="card" *ngFor="let port of airports; let i = index" [attr.data-index]="i" >
+      <mat-card-header>
+        <mat-card-title class="card_title">{{port.Name}}</mat-card-title>
+        <mat-card-subtitle>{{port.IataCode}}</mat-card-subtitle>
+      </mat-card-header>
+  
+          <img mat-card-image *ngIf="items" [src]="items[i].image">
+  
+      <mat-card-content>
+          <p class="card_address">  {{port.Location.Address}}</p>
+          <p> {{ port.Location.City.CountryRegion }}</p>  
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LEARN MORE</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-card-content>
+</mat-card>

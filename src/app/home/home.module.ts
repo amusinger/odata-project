@@ -15,6 +15,10 @@ import { MatPaginatorModule, MatTableModule, MatIconModule, MatSelectModule, Mat
 import { CdkTableModule } from '@angular/cdk/table';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeAirportsComponent } from './home-airports/home-airports.component';
+import { AirportService } from '../services/airport.service';
+import { HomeStatsComponent } from './home-stats/home-stats.component';
+import { HelperService } from '../services/helper.service';
 
 @NgModule({
   imports: [
@@ -53,10 +57,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatToolbarModule,
     MatTooltipModule,
   ],
-  providers: [PeopleService],
+  providers: [
+    PeopleService,
+    AirportService,
+    HelperService
+  ],
   declarations: [
     HomeComponent,
-    HomePeopleComponent
+    HomePeopleComponent,
+    HomeAirportsComponent,
+    HomeStatsComponent
   ]
 })
 export class HomeModule { }

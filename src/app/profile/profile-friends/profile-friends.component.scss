@@ -1,0 +1,9 @@
+mat-list{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+mat-list-item{
+  flex: 1 0 15%;
+}

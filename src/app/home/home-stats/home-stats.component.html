@@ -1,0 +1,19 @@
+
+<mat-card>
+    <mat-card-title>Statistics</mat-card-title>
+    <mat-card-content>
+      <table matSort (matSortChange)="sortData($event)" *ngIf="sortedData">
+          <tr>
+            <th mat-sort-header="service">Item</th>
+            <th mat-sort-header="count">Count</th>
+          
+          </tr>
+        
+          <tr *ngFor="let item of sortedData">
+            <td>{{item.service}}</td>
+            <td>{{item.count}}</td>
+          
+          </tr>
+    </table>
+  </mat-card-content>
+</mat-card>

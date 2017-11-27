@@ -4,15 +4,17 @@ import { ProfileComponent } from './profile.component';
 import { ProfileRoutingModule } from './profile-routing.module';
 import { PeopleService } from '../services/people.service';
 import {MatButtonModule, MatCardModule} from '@angular/material';
+import { ProfileFriendsComponent } from './profile-friends/profile-friends.component';
+import { CoreModule } from '../core/core.module';
+import { ProfileTripsComponent } from './profile-trips/profile-trips.component';
 
 @NgModule({
   imports: [
     ProfileRoutingModule,
     CommonModule,
-    MatButtonModule,
-    MatCardModule
+    CoreModule
   ],
   providers: [PeopleService],
-  declarations: [ProfileComponent]
+  declarations: [ProfileComponent, ProfileFriendsComponent, ProfileTripsComponent]
 })
 export class ProfileModule { }

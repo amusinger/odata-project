@@ -6,6 +6,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { HomeModule } from './home/home.module';
 import { AuthGuard } from './auth.guard';
 import { HomeComponent } from './home/home.component';
+import { PersonComponent } from './person/person.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
         canActivateChild: [AuthGuard],
         canLoad: [AuthGuard]
       },
+      {
+        path: 'person/:username', 
+        component: PersonComponent
+      }
     ]
   }
 ];

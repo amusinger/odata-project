@@ -1,0 +1,14 @@
+.home-row{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+
+    .home-row_people{
+        flex: 1 0 65%;
+        margin-right: 10px;
+    }
+
+    .home-row_stats{
+        flex: 1 0 25%;
+    }
+}

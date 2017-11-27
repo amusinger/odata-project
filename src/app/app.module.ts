@@ -12,6 +12,7 @@ import { DeactivateGuard } from './deactivate.guard';
 import { AuthService } from './services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
+import { PersonModule } from './person/person.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HomeModule } from './home/home.module';
     CoreModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HomeModule
+    HomeModule,
+    PersonModule
   ],
   providers: [
     AuthService,

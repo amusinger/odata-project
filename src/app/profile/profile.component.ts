@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit {
     private route: ActivatedRoute,
     private peopleService: PeopleService) { }
 
+    myFriends: any[];
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.myProfile = data.testData;

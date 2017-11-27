@@ -29,9 +29,11 @@ export class HomePeopleComponent implements OnInit {
   constructor(private peopleService: PeopleService) { }
 
   ngOnInit() {
+    
     setTimeout(() => {
       this.dataSource = new ExampleDataSource(this.exampleDatabase, this.paginator);
     }, 1000);
+    
    
     // this.getPeople();
   }

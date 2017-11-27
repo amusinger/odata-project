@@ -1,0 +1,48 @@
+<!-- <pre>{{friends | json}}</pre>
+ -->
+
+ <div class="example-container mat-elevation-z8">
+    <div class="example-header">
+      <mat-form-field floatPlaceholder="never">
+        <input matInput #filter placeholder="Filter trips">
+      </mat-form-field>
+    </div>
+  
+    <mat-table #table [dataSource]="dataSource">
+  
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="Name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.Name}} </mat-cell>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="Budget">
+        <mat-header-cell *matHeaderCellDef> Budget </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.Budget}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="Description">
+        <mat-header-cell *matHeaderCellDef>Description </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.Description}} </mat-cell>
+      </ng-container>
+  
+      <!-- Color Column -->
+      <ng-container matColumnDef="StartsAt">
+        <mat-header-cell *matHeaderCellDef> Starts At </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.StartsAt | date}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="EndsAt">
+          <mat-header-cell *matHeaderCellDef> Ends At </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.EndsAt | date}} </mat-cell>
+        </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
