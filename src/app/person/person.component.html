@@ -1,5 +1,87 @@
 <div *ngIf="profile">
-  {{ profile.UserName }}
+  <h3> {{ profile.FirstName }}  {{ profile.LastName }}</h3>
 
+
+
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Info
+          </mat-panel-title>
+          <mat-panel-description>
+              General infomation
+              <mat-icon>person</mat-icon>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+            <mat-list-item> Username: {{ profile.UserName }} </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item> First Name: {{ profile.FirstName }} </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item> Last Name: {{ profile.LastName } </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item> Middle Name: {{ profile.MiddleName }} </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item> Gender: {{ profile.Gender }} </mat-list-item>
+            <mat-divider></mat-divider>
+            Emails: 
+            <mat-list-item *ngFor="let e of profile.Emails"> 
+                {{ e }}
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item > 
+                Address: {{profile.AddressInfo.Address}}
+            </mat-list-item>
+           </mat-list>
+ 
+  
+      </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Friends
+        </mat-panel-title>
+        <mat-panel-description>
+            Friends of {{profile.UserName}}
+            <mat-icon>people</mat-icon>
+          </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <app-person-friends *ngIf="profile" [profile] = "profile.UserName"></app-person-friends>
+
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Trips
+        </mat-panel-title>
+        <mat-panel-description>
+            Trips of {{profile.UserName}}
+            <mat-icon>map</mat-icon>
+          </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <app-person-trips *ngIf="profile" [profile] = "profile.UserName"></app-person-trips>
+
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Involved people
+        </mat-panel-title>
+        <mat-panel-description>
+         People that were together with {{profile.UserName}}
+          <mat-icon>people_outline</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <app-person-others *ngIf="profile" [profile] = "profile.UserName"></app-person-others>
+            
+    </mat-expansion-panel>
+  
+  </mat-accordion>
 
 </div>

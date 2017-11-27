@@ -12,6 +12,8 @@ export class HomeStatsComponent implements OnInit {
   // dataSource: CountData[] = [];
   sortedData;
 
+  popular;
+
   dataSource = [
     {service: 'People', count: '20'},
     {service: 'Airports', count: '5'},
@@ -38,11 +40,8 @@ export class HomeStatsComponent implements OnInit {
 
 
   ngOnInit() {
-
+    this.statsService.getPersonWithMostFriends().subscribe(data=> this.popular = data);
   }
- addToArray(i: CountData){
- 
- }
   loadData() { 
 
   //  this.statsService.load('People').subscribe(data=> this.dataSource.push(data));

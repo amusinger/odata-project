@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { UserData } from '../home/home-people/home-people.component';
+import { User } from '../person/add-person/add-person.component';
+import { RequestOptions } from '@angular/http';
 
 @Injectable()
 export class PeopleService {
@@ -43,6 +45,37 @@ export class PeopleService {
   public getPerson<T>(username: String): Observable<T> {
     return this.http.get<T>(this.actionUrl + 'People(\'' + username + '\')');
   }
+
+  public getPersonFriends(username: String){
+    return this.http.get(this.actionUrl + 'People(\'' + username + '\')?$expand=Friends');
+  }
+
+  public getPersonTrips(username: String){
+    return this.http.get(this.actionUrl + 'People(\'' + username + '\')?$expand=Trips');
+  }
+
+  public getInvolvedPeople(username: String){
+    return this.http.get(this.actionUrl + 'People(\'' + username + '\')/Trips(0)/Microsoft.OData.Service.Sample.TrippinInMemory.Models.GetInvolvedPeople');
+  }
+
+  public addPerson(user: User){
+    // const body = {
+    //   UserName: user.UserName,
+    //   FirstName: user.FirstName,
+    //   LastName: user.LastName,
+    //   Emails: user.Emails,
+    //   AddressInfo: user.AddressInfo
+    // };
+    let body = JSON.stringify(user);
+    let headers = new HttpHeaders();
+    headers.set('Content-Type', 'application/json');
+    console.log(body);
+    this.http.post('http://services.odata.org/TripPinRESTierService/(S(hu4p11ocgenadam2lzvhzyni))/People',
+                   body, {headers}).subscribe();
+    
+    console.log(user);
+  }
+
 
 }
 

@@ -13,11 +13,16 @@ import { AuthService } from './services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
 import { PersonModule } from './person/person.module';
+import { AirportComponent } from './airport/airport.component';
+import { FormsModule } from '@angular/forms';
+
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AirportComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,11 @@ import { PersonModule } from './person/person.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HomeModule,
-    PersonModule
+    PersonModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBZRNZinTN1VE_aoFcq-od2_MAcw3vkVW4'
+    })
   ],
   providers: [
     AuthService,

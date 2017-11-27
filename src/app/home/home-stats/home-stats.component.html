@@ -15,5 +15,19 @@
           
           </tr>
     </table>
+
+        <mat-card *ngIf="popular" class="popular">
+           <h4>Person With Most Friends</h4>
+       
+                <mat-card-header [routerLink]="['/person', popular.UserName]">
+                  
+                  <!-- <mat-card-title></mat-card-title> -->
+                  <div mat-card-avatar class="example-header-image"><mat-icon>person</mat-icon></div>
+                  <mat-card-title>{{popular.UserName}}</mat-card-title>
+                  <mat-card-subtitle>{{popular.FirstName}} {{popular.LastName}}</mat-card-subtitle>
+              </mat-card-header>
+           
+        </mat-card>
+
   </mat-card-content>
 </mat-card>

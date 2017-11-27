@@ -15,4 +15,8 @@ export class AirportService {
   public load(): Promise<any> {
     return this.http.get('/assets/airports.json').toPromise();
   }
+
+  public getAirport<T>(port: String): Observable<T> {
+    return this.http.get<T>(this.actionUrl + 'Airports(\'' + port + '\')');
+  }
 }

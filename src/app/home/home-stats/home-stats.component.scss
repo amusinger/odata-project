@@ -8,3 +8,12 @@ table{
         padding: 8px;
     }
 }
+.popular{
+    width: 90%;
+    margin: 10px auto;
+    cursor: pointer;
+
+    &:hover{
+        box-shadow: 10px 10px 5px #888888;
+    }
+}

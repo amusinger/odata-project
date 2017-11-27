@@ -12,7 +12,10 @@ export class HelperService {
   actionUrl= 'http://services.odata.org/TripPinRESTierService/';
   
   constructor(private http: HttpClient) { }
-
+  
+  public getPersonWithMostFriends(){
+    return this.http.get(this.actionUrl + 'GetPersonWithMostFriends');
+  }
   item: CountData;
 items: CountData[] = [];
   

@@ -1,0 +1,21 @@
+<div *ngIf="port">
+<h3>{{port.Name}}</h3>
+
+<mat-chip-list>
+  <mat-chip>{{port.IcaoCode}}</mat-chip>
+  <mat-chip>{{port.IataCode}}</mat-chip>
+</mat-chip-list>
+
+<mat-list>
+   
+    <mat-list-item>
+       <mat-icon matListIcon><i class="material-icons">location_on</i></mat-icon>
+       <h4 matLine>{{port.Location.Address}}</h4>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    
+ </mat-list>
+</div>
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng" [label]="label"></agm-marker>
+</agm-map>

@@ -16,7 +16,7 @@
           <p> {{ port.Location.City.CountryRegion }}</p>  
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>LEARN MORE</button>
+        <button mat-button [routerLink]="['/airport', port.IcaoCode]">LEARN MORE</button>
       </mat-card-actions>
     </mat-card>
   </mat-card-content>

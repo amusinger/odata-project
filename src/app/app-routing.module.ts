@@ -7,6 +7,8 @@ import { HomeModule } from './home/home.module';
 import { AuthGuard } from './auth.guard';
 import { HomeComponent } from './home/home.component';
 import { PersonComponent } from './person/person.component';
+import { AirportComponent } from './airport/airport.component';
+import { AddPersonComponent } from './person/add-person/add-person.component';
 
 const routes: Routes = [
   {
@@ -37,6 +39,14 @@ const routes: Routes = [
       {
         path: 'person/:username', 
         component: PersonComponent
+      },
+      {
+        path: 'airport/:code', 
+        component: AirportComponent
+      },
+      {
+        path: 'add',
+        component: AddPersonComponent
       }
     ]
   }

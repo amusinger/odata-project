@@ -1,22 +1,22 @@
 [
     {
-      "title": "San Francisco International Airport",
+      "title": "SFO",
       "image": "/assets/images/airports/SFO.jpg"
     },
     {
-      "title": "Los Angeles International Airport",
+      "title": "LAX",
       "image": "/assets/images/airports/LAX.jpg"
     },
     {
-        "title": "Shanghai Hongqiao International Airport",
+        "title": "SHA",
         "image": "/assets/images/airports/SHA.jpg"
     },
     {
-        "title": "Beijing Capital International Airport",
+        "title": "PEK",
         "image": "/assets/images/airports/PEK.jpg"
     },
     {
-        "title": "John F. Kennedy International Airport",
+        "title": "JFK",
         "image": "/assets/images/airports/JFK.jpg"
     }
   ]
