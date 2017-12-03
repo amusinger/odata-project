@@ -8,13 +8,20 @@ import { PeopleService } from '../../services/people.service';
 })
 export class PersonOthersComponent implements OnInit {
 
-  @Input() profile: any;
+  _profile: any;
+  people: any;
+  @Input()
+  set profile(profile: string) {
+     this._profile = profile;
+     console.log("wekrlwe", this._profile);
+     if(this._profile){
+      this.service.getInvolvedPeople(this._profile).subscribe(data => this.people = data["value"]);
+    }
+  }
   constructor(private service: PeopleService) { }
 
-  people: any;
+
   ngOnInit() {
-    if(this.profile){
-      this.service.getInvolvedPeople(this.profile).subscribe(data => this.people = data["value"]);
-    }
+   
   }
 }

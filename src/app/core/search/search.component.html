@@ -1,0 +1,4 @@
+<form>
+  <input type="search" placeholder="Search people"  [(ngModel)]="search" name="search-input">
+  <button class="btn" type="submit" [routerLink]="['/search', search]">Find</button>
+</form>

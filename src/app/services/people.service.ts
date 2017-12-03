@@ -55,27 +55,42 @@ export class PeopleService {
   }
 
   public getInvolvedPeople(username: String){
-    return this.http.get(this.actionUrl + 'People(\'' + username + '\')/Trips(0)/Microsoft.OData.Service.Sample.TrippinInMemory.Models.GetInvolvedPeople');
+    return this.http.get(this.actionUrl + 'People(\'' 
+    + username + '\')/Trips(0)/Microsoft.OData.Service.Sample.TrippinInMemory.Models.GetInvolvedPeople');
+  }
+
+  public searchPeople(word: string){
+    console.log(word);
+    return this.http.get(this.actionUrl + '/People?$search=' + word);
   }
 
   public addPerson(user: User){
-    // const body = {
-    //   UserName: user.UserName,
-    //   FirstName: user.FirstName,
-    //   LastName: user.LastName,
-    //   Emails: user.Emails,
-    //   AddressInfo: user.AddressInfo
-    // };
-    let body = JSON.stringify(user);
-    let headers = new HttpHeaders();
-    headers.set('Content-Type', 'application/json');
-    console.log(body);
-    this.http.post('http://services.odata.org/TripPinRESTierService/(S(hu4p11ocgenadam2lzvhzyni))/People',
-                   body, {headers}).subscribe();
+    let body = user;
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    // console.log(body);
+    this.http
+        .post('http://services.odata.org/TripPinRESTierService/(S(yt1jbofoxl42lihfrpoyesre))/People',
+        {
+          "UserName":"lewis2black2",
+          "FirstName":"Lewis",
+          "LastName":"Black",
+          "Emails":[
+              "lewisblack@example.com"
+          ],
+          "AddressInfo": [
+          {
+            "Address": "187 Suffolk Ln.",
+            "City": {
+              "Name": "Boise",
+              "CountryRegion": "United States",
+              "Region": "ID"
+            }
+          }
+          ]
+        }, { headers }
+              ).subscribe();
     
     console.log(user);
   }
-
-
 }
 

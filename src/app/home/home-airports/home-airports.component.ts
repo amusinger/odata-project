@@ -18,7 +18,10 @@ export class HomeAirportsComponent implements OnInit {
   constructor(private imageAirports: AirportService) { }
 
   ngOnInit() {
-    this.imageAirports.load().then(data => this.items = data);
+    this.imageAirports.load().then(data =>{
+        this.items = data['ports']
+        console.log(data);
+      });
     console.log(this.airports);
   }
   

@@ -7,15 +7,23 @@ import { PeopleService } from '../../services/people.service';
   styleUrls: ['./person-trips.component.scss']
 })
 export class PersonTripsComponent implements OnInit {
-
-  @Input() profile: any;
+  
+  _profile: any;
+  
+  @Input()
+  set profile(profile: string) {
+     this._profile = profile;
+     if(this._profile){
+      console.log('he', this._profile);
+      this.service.getPersonTrips(this._profile).subscribe(data => this.trips = data["Trips"]);
+    }
+  }
   constructor(private service: PeopleService) { }
 
   trips: any;
   ngOnInit() {
-    if(this.profile){
-      this.service.getPersonTrips(this.profile).subscribe(data => this.trips = data["Trips"]);
-    }
+    
+  
   }
 
 }

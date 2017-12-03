@@ -1,0 +1,7 @@
+<div *ngIf="results">
+  <mat-card *ngFor="let person of results">
+    {{
+      person | json
+    }}
+  </mat-card>
+</div>

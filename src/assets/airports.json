@@ -1,23 +1,46 @@
-[
-    {
-      "title": "SFO",
-      "image": "/assets/images/airports/SFO.jpg"
-    },
-    {
-      "title": "LAX",
-      "image": "/assets/images/airports/LAX.jpg"
-    },
-    {
-        "title": "SHA",
-        "image": "/assets/images/airports/SHA.jpg"
-    },
-    {
-        "title": "PEK",
-        "image": "/assets/images/airports/PEK.jpg"
-    },
-    {
-        "title": "JFK",
-        "image": "/assets/images/airports/JFK.jpg"
-    }
-  ]
+{
+    "ports":[
+        {
+            "title": "SFO",
+            "image": "/assets/images/airports/SFO.jpg"
+          },
+          {
+            "title": "LAX",
+            "image": "/assets/images/airports/LAX.jpg"
+          },
+          {
+              "title": "SHA",
+              "image": "/assets/images/airports/SHA.jpg"
+          },
+          {
+              "title": "PEK",
+              "image": "/assets/images/airports/PEK.jpg"
+          },
+          {
+              "title": "JFK",
+              "image": "/assets/images/airports/JFK.jpg"
+          }
+
+    ],
+    "lines":
+    [
+        {
+            "title": "AA",
+            "desc": "American Airlines, Inc. is a major U.S airline headquartered in Fort Worth, Texas, within the Dallas-Fort Worth metroplex",
+            "image": "/assets/images/airlines/aa.jpg"
+          },
+          {
+            "title": "FM",
+            "desc": "Shanghai Airlines is an airline headquartered in Shanghai, China. It is a wholly owned subsidiary of China Eastern Airlines, but its operations remain separate post-merger, retaining its distinct brand and livery.",
+            "image": "/assets/images/airlines/fm.jpg"
+          },
+          {
+            "title": "MU",
+            "desc": "China Eastern Airlines Corporation Limited is an airline headquartered in the China Eastern Airlines Building, on the grounds of Shanghai Hongqiao International Airport in Changning District, Shanghai, China.",
+            "image": "/assets/images/airlines/mu.jpg"
+          } 
+    ]
+}
+   
+
   

@@ -12,7 +12,8 @@ import { MatPaginatorModule, MatTableModule, MatIconModule, MatSelectModule, Mat
         MatRippleModule, MatSidenavModule, MatSnackBarModule, MatSortModule, 
         MatTabsModule, MatTooltipModule } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   imports: [
@@ -51,11 +52,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SearchComponent
   ],
   exports: [
     HeaderComponent,
@@ -95,7 +98,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
 })
 export class CoreModule { }

@@ -1,0 +1,16 @@
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Enter any address" [(ngModel)]="place">
+</mat-form-field>
+<button mat-button (click)="findAirport(place)">Find</button>
+
+<div *ngIf="address">
+ <p >Your are here: {{address}}</p> 
+ <div *ngIf="port">
+   <p>The nearest aiport is: {{ port.Name }} </p>  
+   <p>Location: {{ port.Location.Address }}</p>
+   <button mat-button [routerLink]="['/airport', port.IcaoCode]">Learn more</button>
+
+ </div>
+ 
+</div>
+   

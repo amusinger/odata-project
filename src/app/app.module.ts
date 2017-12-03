@@ -17,12 +17,22 @@ import { AirportComponent } from './airport/airport.component';
 import { FormsModule } from '@angular/forms';
 
 import { AgmCoreModule } from '@agm/core';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { AirportSearchComponent } from './airport-search/airport-search.component';
+import { AirlineComponent } from './airline/airline.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { PathPipe } from './path.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AirportComponent
+    AirportComponent,
+    SearchResultsComponent,
+    AirportSearchComponent,
+    AirlineComponent,
+    NotFoundComponent,
+    PathPipe
   ],
   imports: [
     BrowserModule,

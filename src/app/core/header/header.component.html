@@ -1,29 +1,48 @@
-<!-- <header class="header">
-  <div class="container">
-    <a [routerLink]="['/']" class="logo-link">
-      <img class="img-logo" [src]="'/assets/images/odata.png'" alt="DAR Bazar">
-    </a>
-    <div class="header__icon">
-      <a class="header__icon-link" [routerLink]="['/profile']">
-        <img [src]="'/assets/images/profile-icon.svg'">
-      </a>
-    </div>
-    <div class="header__profile">
-      <a [routerLink]="['/profile']">My Profile</a>
-    </div>
-  </div>
-</header> -->
+
+
 
 <header>
-<nav>
-    <button mat-button [routerLink]="['/']">
-      <mat-icon> home </mat-icon>
-      <span> Home </span>
-    </button>
-    <button mat-button [routerLink]="['/profile']">
-      <mat-icon> account_circle</mat-icon>
-      <span> Profile </span>
-    </button>
-    <mat-slide-toggle [formControl]="checked">Login</mat-slide-toggle>
-  </nav>
-</header>
+
+    <mat-toolbar color="primary">
+
+
+      <button type="button" mat-mini-fab (click)="sidenav.toggle()" class="nav_menu-btn">
+          <mat-icon> menu </mat-icon>
+      </button>
+      <button mat-button routerLink="/">
+        <mat-icon> home </mat-icon>
+      </button>
+
+          <app-search></app-search>
+      
+
+        </mat-toolbar>
+
+  </header>
+    <mat-sidenav #sidenav  class="sidenav-content">
+         
+      <button mat-button [routerLink]="['/']">
+        <mat-icon> home </mat-icon>
+        <span> Home </span>
+      </button>
+      <br>
+     
+      <button mat-button routerLink="/profile">
+        <mat-icon> account_circle</mat-icon>
+        <span> Profile </span>
+      </button>
+      <mat-checkbox [formControl]="checked">Login</mat-checkbox> 
+      <br>
+
+      <button mat-button routerLink="/airsearch">
+        <mat-icon> flight </mat-icon>
+        <span> Find airport </span>
+      </button>
+
+      <button mat-button [routerLink]="['/airline']">
+        <mat-icon> flight_takeoff </mat-icon>
+        <span> Airlines </span>
+      </button>
+
+      </mat-sidenav>
+     

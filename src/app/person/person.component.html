@@ -19,7 +19,7 @@
             <mat-divider></mat-divider>
             <mat-list-item> First Name: {{ profile.FirstName }} </mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item> Last Name: {{ profile.LastName } </mat-list-item>
+            <mat-list-item> Last Name: {{ profile.LastName }} </mat-list-item>
             <mat-divider></mat-divider>
             <mat-list-item> Middle Name: {{ profile.MiddleName }} </mat-list-item>
             <mat-divider></mat-divider>
@@ -48,7 +48,7 @@
           </mat-panel-description>
       </mat-expansion-panel-header>
   
-      <app-person-friends *ngIf="profile" [profile] = "profile.UserName"></app-person-friends>
+      <app-person-friends [profile] = "profile.UserName"></app-person-friends>
 
     </mat-expansion-panel>
   
@@ -63,7 +63,7 @@
           </mat-panel-description>
       </mat-expansion-panel-header>
   
-      <app-person-trips *ngIf="profile" [profile] = "profile.UserName"></app-person-trips>
+      <app-person-trips [profile] = "profile.UserName"></app-person-trips>
 
     </mat-expansion-panel>
   
@@ -78,7 +78,7 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
   
-      <app-person-others *ngIf="profile" [profile] = "profile.UserName"></app-person-others>
+      <app-person-others [profile] = "profile.UserName"></app-person-others>
             
     </mat-expansion-panel>
   

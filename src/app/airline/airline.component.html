@@ -1,0 +1,18 @@
+<div *ngIf="lines">
+  <mat-tab-group>
+    <mat-tab *ngFor="let line of lines; let i = index" label="{{line.Name}}">
+     
+      <mat-chip-list>
+        <mat-chip color="accent" selected="true"> {{line.AirlineCode}}</mat-chip>
+      </mat-chip-list>
+
+      <div *ngIf="items">
+       
+        <p>
+          Description: {{ items[i].desc }}
+        </p>
+        <img mat-card-image  [src]="items[i].image">
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
