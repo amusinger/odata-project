@@ -16,13 +16,10 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit() {
-   //this.airports = this.airportService.getAll().map(res => res["value"]);
-  
+   // this.airports = this.airportService.getAll().map(res => res["value"]);
     this.airportService.getAll()
     .subscribe(airports => {
-        this.airports = airports["value"] as any[];
+        this.airports = airports['value'] as any[];
     })
-   
   }
-
 }

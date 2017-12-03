@@ -34,7 +34,7 @@ export class PeopleService {
     return this.http.get(this.actionUrl + '/Me/Friends').toPromise();
   }
 
-  public getMyTrips(): any{
+  public getMyTrips(): any {
     this.http.get(this.actionUrl + '/Me/Trips').subscribe(data => {
       for (let i = 0; i < data['value'].length; i ++) {
         this.subject.next(data['value'][i]);
@@ -46,19 +46,19 @@ export class PeopleService {
     return this.http.get<T>(this.actionUrl + 'People(\'' + username + '\')');
   }
 
-  public getPersonFriends(username: String){
+  public getPersonFriends(username: String) {
     return this.http.get(this.actionUrl + 'People(\'' + username + '\')?$expand=Friends');
   }
 
-  public getPersonTrips(username: String){
+  public getPersonTrips(username: String) {
     return this.http.get(this.actionUrl + 'People(\'' + username + '\')?$expand=Trips');
   }
 
-  public getInvolvedPeople(username: String){
+  public getInvolvedPeople(username: String) {
     return this.http.get(this.actionUrl + 'People(\'' + username + '\')/Trips(0)/Microsoft.OData.Service.Sample.TrippinInMemory.Models.GetInvolvedPeople');
   }
 
-  public addPerson(user: User){
+  public addPerson(user: User) {
     // const body = {
     //   UserName: user.UserName,
     //   FirstName: user.FirstName,
@@ -71,8 +71,7 @@ export class PeopleService {
     headers.set('Content-Type', 'application/json');
     console.log(body);
     this.http.post('http://services.odata.org/TripPinRESTierService/(S(hu4p11ocgenadam2lzvhzyni))/People',
-                   body, {headers}).subscribe();
-    
+                   body, {headers}).subscribe();    
     console.log(user);
   }
 

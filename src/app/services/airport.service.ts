@@ -4,8 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class AirportService {
-  actionUrl= 'http://services.odata.org/TripPinRESTierService/';
-  
+  actionUrl= 'http://services.odata.org/TripPinRESTierService/';  
   constructor(private http: HttpClient) { }
 
   public getAll<T>(): Observable<T> {

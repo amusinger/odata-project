@@ -24,8 +24,7 @@ export class PersonComponent implements OnInit {
       console.log(this.username)
       this.peopleService.getPerson(this.username)
         .subscribe(data => this.profile = data);
-        console.log(this.profile)
-      
+        console.log(this.profile)      
    });
   }
   ngOnDestroy() {
