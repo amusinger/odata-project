@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AirportService } from '../services/airport.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-airport-search',
@@ -16,10 +17,14 @@ export class AirportSearchComponent implements OnInit {
   newLat: number;
   newLon: number;
   port;
+  firstFormGroup: FormGroup;
 
-  constructor(private portService: AirportService) { }
+  constructor(private portService: AirportService, private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
   }
 
   findAirport(place: string){

@@ -9,13 +9,15 @@ header {
     width: 100%;
     margin-bottom: 20px;
     background-color: #f6f6f7;
-  }
+}
 
-  mat-sidenav {
-    width: 250px;
-    margin-top: 64px;
-    padding: 20px;
-  }
+
+
+app-search{
+   min-width: 450px;
+   margin-left: 50%;
+}
+
 nav{
   margin: 0 50px;
 }
@@ -26,21 +28,17 @@ nav{
 .sidenav-content{
   padding: 20px;
 }
-// .example-container {
-//   width: 500px;
-//   height: 300px;
-//   border: 1px solid rgba(0, 0, 0, 0.5);
-// }
 
-// .example-sidenav-content {
-//   display: flex;
-//   height: 100%;
-//   align-items: center;
-//   justify-content: center;
-// }
+mat-sidenav {
+  width: 250px;
+  margin-top: 64px;
+  padding: 20px;
+}
 
-// .example-sidenav {
-//   padding: 20px;
-// }
+.menu-btn{
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
   
   

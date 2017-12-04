@@ -1,16 +1,51 @@
-<mat-form-field class="example-full-width">
-  <input matInput placeholder="Enter any address" [(ngModel)]="place">
-</mat-form-field>
-<button mat-button (click)="findAirport(place)">Find</button>
+<!-- <div class="search-field">
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Enter any address" [(ngModel)]="place">
+  </mat-form-field>
+  <button mat-button (click)="findAirport(place)">Find
+    <mat-icon>search</mat-icon>
+  </button>
+</div>
 
 <div *ngIf="address">
- <p >Your are here: {{address}}</p> 
- <div *ngIf="port">
-   <p>The nearest aiport is: {{ port.Name }} </p>  
-   <p>Location: {{ port.Location.Address }}</p>
-   <button mat-button [routerLink]="['/airport', port.IcaoCode]">Learn more</button>
+  <p >Your are here: {{address}}</p> 
+  <div *ngIf="port">
+    <p>The nearest aiport is: {{ port.Name }} </p>  
+    <p>Location: {{ port.Location.Address }}</p>
+    <button mat-button [routerLink]="['/airport', port.IcaoCode]">Learn more</button>
+  </div> 
+</div> -->
 
- </div>
- 
-</div>
+
+
+<mat-horizontal-stepper >
+    <mat-step [stepControl]="firstFormGroup">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Enter any address" [(ngModel)]="place">
+          </mat-form-field>
+        <div>
+          <button mat-button matStepperNext (click)="findAirport(place)">Find
+              <mat-icon>search</mat-icon></button>
+        </div>
+
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Result</ng-template>
+      <div *ngIf="address">
+          <p >Your are here: {{address}}</p> 
+          <div *ngIf="port">
+            <p>The nearest aiport is: {{ port.Name }} </p>  
+            <p>Location: {{ port.Location.Address }}</p>
+            <button mat-button [routerLink]="['/airport', port.IcaoCode]" class="back-btn">Learn more</button>
+          </div> 
+        </div>
+      <div>
+        <button mat-button matStepperPrevious>
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
    

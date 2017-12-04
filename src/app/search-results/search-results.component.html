@@ -1,7 +1,11 @@
 <div *ngIf="results">
   <mat-card *ngFor="let person of results">
-    {{
-      person | json
-    }}
+    <mat-card-header [routerLink]="['/person', person.UserName]">
+      <div mat-card-avatar class="example-header-image"><mat-icon>person</mat-icon></div>
+      
+      <mat-card-title>{{person.UserName}}</mat-card-title>
+      <mat-card-subtitle>{{person.FirstName}} {{person.LastName}}</mat-card-subtitle>
+  </mat-card-header>
+
   </mat-card>
 </div>
